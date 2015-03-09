@@ -5,6 +5,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Calendar;
 
 public class Blog {
 	private User user;
@@ -93,6 +94,32 @@ public class Blog {
 	public int hashCode() {
 		//TODO
 		return user.hashCode() * allPosts.hashCode();
+	}
+	
+	/**
+	 * Search posts created in month and mentioned someone
+	 * 
+	 * @param month
+	 * @param someone
+	 */
+	public void search(int month, String someone) {
+		Calendar cal = Calendar.getInstance();
+		//search from all posts
+		for (Post p : allPosts) {
+			// get the current post's month (note that Calendar.Month starts
+			// with 0, not 1)
+			cal.setTime(p.getDate());
+			int postMonth = cal.get(Calendar.MONTH);
+			if ((postMonth+1 == month) && (p.getContent().contains("@" + someone))) {
+				System.out.println(p.getDate());
+				System.out.println(p.getContent());
+			}
+		}
+	}
+
+	public void setPosts(ArrayList<Post> postList) {
+		// TODO Auto-generated method stub
+		allPosts = postList;
 	}
 	
 	/**
