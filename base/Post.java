@@ -1,9 +1,10 @@
 package base;
 import java.util.Date;
+import java.io.Serializable;
 import java.lang.Object;
 import java.lang.Class;
 
-public class Post implements Comparable<Post> {
+public class Post implements Comparable<Post>, Serializable {
 	private Date date;
 	private String content;
 	
