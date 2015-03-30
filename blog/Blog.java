@@ -68,7 +68,7 @@ public class Blog implements Serializable {
 		//TODO
 		System.out.println("Current posts:");
 		for (int i = 0; i < allPosts.size(); i++) {
-			System.out.printf("Post[%d]:", i);
+			System.out.printf("Post[%d]:", i + 1);
 			System.out.println(allPosts.get(i));
 		}
 	}
