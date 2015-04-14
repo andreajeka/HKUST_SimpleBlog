@@ -96,6 +96,10 @@ public class Blog implements Serializable {
 		return s;
 	}
 	
+	public  ArrayList<Post> getList() {
+		return allPosts;
+	}
+	
 	@Override
 	public int hashCode() {
 		//TODO
