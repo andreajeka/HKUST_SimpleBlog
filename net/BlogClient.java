@@ -22,8 +22,19 @@ public class BlogClient {
 			) {
 				String userInput;
 				while((userInput = stdIn.readLine()) != null) {
-					out.println(userInput);
-					out.flush();
+					if (userInput.equals("quit"))
+						break;
+					else {
+						if (userInput.equals("visitor")) {
+							out.println(userInput);		
+							System.out.println("You are the " + in.readLine() + " visitor today");	
+						}
+						else {
+							out.println(userInput);	
+							System.out.println("echo: " + in.readLine());
+						}
+						out.flush();
+					}
 				}
 			} catch (UnknownHostException e) {
 				System.err.println("Unknown host");
